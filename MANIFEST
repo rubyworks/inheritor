@@ -1,0 +1,20 @@
+#!mast lib meta test [A-Z]*
+lib
+lib/inheritor.rb
+meta
+meta/abstract
+meta/authors
+meta/created
+meta/homepage
+meta/license
+meta/package
+meta/project
+meta/released
+meta/repository
+meta/summary
+meta/version
+test
+test/test_inheritor.rb
+LICENSE
+README
+HISTORY
