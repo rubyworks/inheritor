@@ -1,0 +1,71 @@
+= Inheritor
+
+  http://death.rubyforge.org
+
+
+== DESCRIPTION
+
+Inheritor providse a means to store and inherit data via
+the class heirarchy. An inheritor creates two methods
+one named after the key that provides a reader. And one
+named after key! which provides the writer. (Because of
+the unique nature of inheritor the reader and writer
+can't be the same method.)
+
+
+== FEATURES/ISSUES
+
+* Create inheritable attributes.
+* Works with modules (provieds module method inheritance).
+* Easily handles any data and inheritance type.
+
+
+== RELEASE NOTES
+
+Please see RELEASE file.
+
+
+== SYNOPSIS
+
+   class X
+     inheritor :foo, [], :+
+   end
+
+   class Y < X
+   end
+
+   X.x! << :a
+   X.x => [:a]
+   Y.x => [:a]
+
+   Y.x! << :b
+   X.x => [:a]
+   Y.x => [:a, :b]
+
+
+== HOW TO INSTALL
+
+Describe your installation procedure here.
+
+To install with RubyGems simply open a console and type:
+
+  gem install inheritor
+
+Local installation requires Setup.rb (gem install setup),
+then download the tarball package and type:
+
+  tar -xvzf inheritor-1.0.0.tgz
+  cd inheritor-1.0.0
+  sudo setup.rb all
+
+Windows users use 'ruby setup.rb all'.
+
+
+== COPYING
+
+Copyright (c) 2004 The Coding Dead
+
+This program is ditributed unser the terms of the LGPLv3 license.
+
+See LICENSE file for details.
+

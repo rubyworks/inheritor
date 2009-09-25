@@ -1,0 +1,6 @@
+Inheritor providse a means to store and inherit data via
+the class heirarchy. An inheritor creates two methods
+one named after the key that provides a reader. And one
+named after key! which provides the writer. (Because of
+the unique nature of inheritor the reader and writer
+can't be the same method.)
