@@ -2,7 +2,9 @@
 
 == 1.0.0 // 2009-07-01
 
-Initial stand-alone release as ported form Ruby Facets.
+Initial stand-alone release as ported from Ruby Facets.
+
+Changes:
 
 * 1 Major Enhancement
 
