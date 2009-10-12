@@ -48,10 +48,11 @@ class Object
   #   X.x => [:a]
   #   Y.x => [:a, :b]
   #
-  # It is interesting to note that the only reason inheritor is needed at all
-  # is becuase Ruby does not allow modules to be "inherited" at the class-level,
-  # or conversely that the class-level is not a module instead.
-  # Otherwise using #super at the class-level would suffice.
+  # It is interesting to note that the inheritor would be much less useful
+  # if Ruby allowed modules to be "inherited" at the class-level, or conversely
+  # that the class-level is handled as a module instead. Because if it were,
+  # using #super at the class-level would make it fairly easy to implement 
+  # this behavior by hand.
   #
   def inheritor(key, obj, op=nil)
 
