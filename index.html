@@ -150,9 +150,10 @@ href="http://github.com/rubyworks/inheritor">github.com/rubyworks/inheritor</a>
 Inheritor provides a means to store and inherit data along the class
 heirarchy. An inheritor creates two methods, one named after for the
 <tt>key</tt> that provides a reader, and one named <tt>key!</tt> which
-provides the writer. Because of the unique nature of inheritor, the reader
-cannot be used to modify the underlying store as teh modifications will not
-be passed on to the descendents.
+provides the writer. Because of the unique nature of Inheritor, the reader
+cannot be used to modify the underlying store b/c it is a calculated
+attribute, thus any modifications to the result would not be passed on to
+the descendents.
 </p>
 <p>
 The most notable feature of Inheritor is that it is dynamic. Unlike other
