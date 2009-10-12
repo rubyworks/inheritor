@@ -6,13 +6,18 @@
 
 == DESCRIPTION
 
-Inheritor providse a means to store and inherit data via
-the class heirarchy. An inheritor creates two methods
-one named after for the +key+ that provides a reader. And
-one named after +key!+ which provides the writer. Because
-of the unique nature of inheritor, the reader can not be used
-to modify the underlying store or it will not be passed on
-to the descendents.
+Inheritor providse a means to store and inherit data via the class
+heirarchy. An inheritor creates two methods one named after for the
++key+ that provides a reader. And one named after +key!+ which provides
+the writer. Because of the unique nature of inheritor, the reader
+cannot be used to modify the underlying store or it will not be passed
+on to the descendents.
+
+The most notable feature of Inheritor is that it is dynamic. Unlike other
+solutions, such as ActiveSupport's class_inheritable_accessor, which
+copy the parents variable value upon class creation or object instantiation,
+or some other trigger, Inheritor dynamically generates the inherited value
+whenever the reader is called.
 
 
 == FEATURES/ISSUES
@@ -28,6 +33,10 @@ Please see HISTORY file.
 
 
 == SYNOPSIS
+
+To create an inheritable class variable provide the #inheritor method
+with the name of the variable, it's initial value, and the methdod
+to be used to process inheritence from descendent to descendent.
 
    class X
      inheritor :foo, [], :+
