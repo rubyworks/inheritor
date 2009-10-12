@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+  <title>Class: Object</title>
+
+  
+    <link rel="SHORTCUT ICON" href="./images/class.png">
+  
+
+  <link type="text/css" media="screen" rel="stylesheet" href="./rdoc.css" />
+
+  <script src="./js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="./js/thickbox.js" type="text/javascript" charset="utf-8"></script>
+  <script src="./js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="./js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+  <div class="head">
+    <h1>
+      
+        <img src="./images/class.png" align="absmiddle">&nbsp;
+      
+      <a href="./index.html">Inheritor</a>&nbsp;
+      <a href="/">Object</a>
+    </h1>
+  </div>
+
+  <div id="metadata">
+    <div id="project-metadata">
+
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li class="file"><a href="./lib/inheritor_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/inheritor.rb">lib/inheritor.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      <!-- What about Git info, or Hg info? This seems almost silly, albeit kind of cool. -->
+
+      
+    </div>
+
+    <div id="class-metadata">
+
+      <!-- Parent Class -->
+      
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        <ul>
+          
+          <!-- why was this class="link" ? -->
+          <li class="class"><a href="Object.html">Object</a></li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Namespace Contents -->
+      
+
+      <!-- Method Quickref -->
+      
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li class="method"><a href="#M000000">#inheritor</a></li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Included Modules -->
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="./HISTORY.html">HISTORY</a></li>
+        
+          <li class="file"><a href="./LICENSE.html">LICENSE</a></li>
+        
+          <li class="file"><a href="./README.html">README</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <!-- classpage.html : classes -->
+        <ul class="link-list">
+        
+          <li class="class"><a href="./Object.html">Object</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+
+    <div id="validator-badges">
+      Generated with <a href="http://github.com/proutils/rdazzle">Razzle Dazzle Redfish</a><br/><br/>
+      <a href="http://validator.w3.org/check/referer">[Validate]</a>
+    </div>
+  </div>
+
+  <div id="documentation">
+
+    <div id="description">
+      
+        <h1>Object</h1>
+      
+
+      
+    </div>
+
+    <!-- Constants -->
+    
+
+    <!-- Attributes -->
+    
+
+    <!-- Methods -->
+    
+    <div id="public-instance-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="inheritor-method" class="method-detail ">
+        <a name="M000000"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">inheritor</span><span
+            class="method-args">(key, obj, op=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Create an inheritor &#8220;class attribute&#8221;.
+</p>
+<p>
+Inheritor providse a means to store and inherit data via the class
+heirarchy. An inheritor creates two methods one named after the key that
+provides a reader. And one named after key! which provides the writer.
+(Because of the unique nature of inheritor the reader and writer
+can&#8217;t be the same method.)
+</p>
+<pre>
+  class X
+    inheritor :foo, [], :+
+  end
+
+  class Y &lt; X
+  end
+
+  X.x! &lt;&lt; :a
+  X.x =&gt; [:a]
+  Y.x =&gt; [:a]
+
+  Y.x! &lt;&lt; :b
+  X.x =&gt; [:a]
+  Y.x =&gt; [:a, :b]
+</pre>
+<p>
+It is interesting to note that the inheritor would be much less useful if
+Ruby allowed modules to be &#8220;inherited&#8221; at the class-level, or
+conversely that the class-level is handled as a module instead. Because if
+it were, using super at the class-level would make it fairly easy to
+implement this behavior by hand.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="inheritor-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/inheritor.rb, line 57</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">inheritor</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">obj</span>, <span class="ruby-identifier">op</span>=<span class="ruby-keyword kw">nil</span>)
+
+    <span class="ruby-comment cmt"># inhertiance operator</span>
+    <span class="ruby-identifier">op</span> = <span class="ruby-identifier">op</span> <span class="ruby-value">? </span><span class="ruby-identifier">op</span>.<span class="ruby-identifier">to_sym</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">:add</span>  <span class="ruby-comment cmt">#NOTE: why #add ?</span>
+
+    <span class="ruby-comment cmt"># inheritor store a this level</span>
+    <span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-node">&quot;@#{key}&quot;</span>, <span class="ruby-identifier">obj</span>)
+
+    <span class="ruby-comment cmt">#base = self</span>
+    <span class="ruby-identifier">deflambda</span> = <span class="ruby-identifier">lambda</span> <span class="ruby-keyword kw">do</span>
+
+      <span class="ruby-identifier">define_method</span>( <span class="ruby-identifier">key</span> ) <span class="ruby-keyword kw">do</span>
+        <span class="ruby-keyword kw">defined?</span>(<span class="ruby-keyword kw">super</span>) <span class="ruby-operator">?</span> <span class="ruby-keyword kw">super</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">op</span>,<span class="ruby-identifier">obj</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">dup</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">define_method</span>( <span class="ruby-node">&quot;#{key}!&quot;</span> ) <span class="ruby-keyword kw">do</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">instance_variable_defined?</span>(<span class="ruby-node">&quot;@#{key}&quot;</span>)
+          <span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-node">&quot;@#{key}&quot;</span>)
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">inheritor</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>, <span class="ruby-identifier">op</span>)
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-comment cmt"># -- old version --</span>
+        <span class="ruby-comment cmt">#if instance_variables.include?(&quot;@#{key}&quot;)</span>
+        <span class="ruby-comment cmt">#  instance_variable_get(&quot;@#{key}&quot;)</span>
+        <span class="ruby-comment cmt">#else</span>
+        <span class="ruby-comment cmt">#  if self != base</span>
+        <span class="ruby-comment cmt">#    inheritor( key, obj.class.new, op )</span>
+        <span class="ruby-comment cmt">#  end</span>
+        <span class="ruby-comment cmt">#end</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-comment cmt"># TODO: This is an issue if you try to include a module</span>
+    <span class="ruby-comment cmt">#       into Module or Class itself. How to fix?</span>
+
+    <span class="ruby-comment cmt"># if the object is a module (not a class or other object)</span>
+    <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">self</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Class</span> <span class="ruby-keyword kw">or</span> <span class="ruby-keyword kw">self</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Module</span>
+      <span class="ruby-identifier">class_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">deflambda</span>)
+    <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Class</span>)
+      (<span class="ruby-keyword kw">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">end</span>).<span class="ruby-identifier">class_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">deflambda</span>)
+    <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Module</span>)
+      <span class="ruby-comment cmt">#class_inherit &amp;deflambda</span>
+      <span class="ruby-identifier">extend</span> <span class="ruby-identifier">class_extension</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">deflambda</span>)
+    <span class="ruby-keyword kw">else</span> <span class="ruby-comment cmt"># other Object</span>
+      (<span class="ruby-keyword kw">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">end</span>).<span class="ruby-identifier">class_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">deflambda</span>)
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-identifier">obj</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+
+  </div>
+
+
+  <div id="rdoc-debugging-section-dump" class="debugging-section">
+  
+    <p>Disabled; run with --debug to generate this.</p>
+  
+  </div>
+
+</body>
+</html>
