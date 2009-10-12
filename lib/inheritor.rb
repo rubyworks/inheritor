@@ -1,24 +1,4 @@
-# = Inheritor
-#
-#  Inheritor providse a means to store and inherit data via
-#  the class heirarchy.
-#
-# == Authors
-#
-# * Thomas Sawyer
-#
-# == Copying
-#
-# Copyright (c) 2005 Thomas Sawyer
-#
-# Ruby License
-#
-# This module is free software. You may use, modify, and/or redistribute this
-# software under the same terms as Ruby.
-#
-# This program is distributed in the hope that it will be useful, but WITHOUT
-# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-# FOR A PARTICULAR PURPOSE.
+# Inheritor, Copyright (c) 2005 Thomas Sawyer
 
 require 'facets/class_extension'
 
@@ -51,7 +31,7 @@ class Object
   # It is interesting to note that the inheritor would be much less useful
   # if Ruby allowed modules to be "inherited" at the class-level, or conversely
   # that the class-level is handled as a module instead. Because if it were,
-  # using #super at the class-level would make it fairly easy to implement 
+  # using #super at the class-level would make it fairly easy to implement
   # this behavior by hand.
   #
   def inheritor(key, obj, op=nil)
@@ -105,4 +85,3 @@ class Object
   end
 
 end
-
