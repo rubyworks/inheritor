@@ -6,18 +6,18 @@
 
 == DESCRIPTION
 
-Inheritor providse a means to store and inherit data via the class
-heirarchy. An inheritor creates two methods one named after for the
-+key+ that provides a reader. And one named after +key!+ which provides
+Inheritor provides a means to store and inherit data along the class
+heirarchy. An inheritor creates two methods, one named after for the
++key+ that provides a reader, and one named +key!+ which provides
 the writer. Because of the unique nature of inheritor, the reader
-cannot be used to modify the underlying store or it will not be passed
-on to the descendents.
+cannot be used to modify the underlying store as teh modifications
+will not be passed on to the descendents.
 
 The most notable feature of Inheritor is that it is dynamic. Unlike other
-solutions, such as ActiveSupport's class_inheritable_accessor, which
-copy the parents variable value upon class creation or object instantiation,
-or some other trigger, Inheritor dynamically generates the inherited value
-whenever the reader is called.
+solutions, such as ActiveSupport's +class_inheritable_accessor+, Inheritor
+dynamically generates the inherited value whenever the reader is called,
+as opposed to copying the parents variable value upon class creation or
+some other specific trigger.
 
 
 == FEATURES/ISSUES
